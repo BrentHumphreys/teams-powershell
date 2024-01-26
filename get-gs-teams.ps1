@@ -9,7 +9,7 @@ $teams = Get-Team
 
 
 # Create an empty array to store the output
-+
+
 $counter = 0
 "Total Teams" + $teams.Length
 
@@ -19,6 +19,7 @@ foreach ($team in $teams) {
     if ($team.DisplayName.Contains("gs") -or $team.DisplayName.Contains("GS" )) {
         <# Action to perform if the condition is true #>
         $filteredTeams += $team
+        $counter  +=1
     }
 }
 $filteredTeams = $filteredTeams | Sort-Object -Property DisplayName
